@@ -1,0 +1,19 @@
+<books>
+  <!--Zero or more repetitions:-->
+  <book isbn="string">
+    <name>string</name>
+    <type>kniha</type>
+    <!--Optional:-->
+    <price>1.5E2</price>
+    <!--Zero or more repetitions:-->
+    <authors>
+      <!--Optional:-->
+      <name>string</name>
+      <!--Optional:-->
+      <middle_name>string</middle_name>
+      <surname>string</surname>
+      <!--Optional:-->
+      <birth_date>2007-10-26</birth_date>
+    </authors>
+  </book>
+</books>

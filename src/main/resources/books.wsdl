@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="BooksWSDL"
+             targetNamespace="books"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:tns="books"
+             xmlns:ns="books"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types>
+        <xsd:schema targetNamespace="books">
+            <xsd:import namespace="books" schemaLocation="books.xsd"/>
+        </xsd:schema>
+    </types>
+
+    <service name="BookService">
+        <port name="BookServicePort" binding="tns:BookServicePortBinding">
+            <soap:address location="http://localhost:8080/book"/>
+        </port>
+    </service>
+
+    <binding name="BookServicePortBinding" type="tns:BookServicePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="list">
+            <soap:operation/>
+            <input name="request">
+                <soap:body use="literal"/>
+            </input>
+            <output name="persons">
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <portType name="BookServicePortType">
+        <operation name="list">
+            <input name="request" message="tns:bookListRequest"/>
+            <output name="response" message="tns:bookListResponse"/>
+        </operation>
+    </portType>
+
+    <message name="bookListResponse">
+        <part name="list" element="ns:books"/>
+    </message>
+    <message name="bookListRequest"/>
+
+</definitions>
