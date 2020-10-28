@@ -25,7 +25,7 @@
             <input name="request">
                 <soap:body use="literal"/>
             </input>
-            <output name="persons">
+            <output name="response">
                 <soap:body use="literal"/>
             </output>
         </operation>

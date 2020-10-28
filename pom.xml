@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>sk.stuba.fei.uim.asos</groupId>
-    <artifactId>spring-course-wsdl</artifactId>
+    <artifactId>java-course-wsdl</artifactId>
     <version>1.0.0</version>
 
     <build>
