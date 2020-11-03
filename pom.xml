@@ -8,6 +8,14 @@
     <artifactId>java-course-wsdl</artifactId>
     <version>1.0.0</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.2.9.RELEASE</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -19,6 +27,7 @@
                     <packageName>sk.stuba.fei.uim.asos.books.ws</packageName>
                     <keep>true</keep>
                     <sourceDestDir>${project.build.directory}/generated-sources/main/java</sourceDestDir>
+                    <bindingDirectory>src/main/resources/jaxb</bindingDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -26,6 +35,14 @@
                         <goals><goal>wsimport</goal></goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
